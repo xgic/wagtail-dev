@@ -58,7 +58,7 @@ Wagtail work needs a **reproducible environment**: pinned Python and Wagtail, Po
                                                      └──────────────────────────┘
 ```
 
-**Do not** start application schema in this repository.
+**Do not** start application schema in this repository. **Do not** copy `requirements.txt` into the template — sites consume the baked image.
 
 ### Consumer contract (Docker Compose–first)
 
@@ -85,7 +85,7 @@ CLI module: [xgic/wagtail-cli](https://github.com/xgic/wagtail-cli) (`xgic wagta
 |-----------|-----|
 | Python | `python:3.14.6-slim` (Dockerfile FROM) |
 | Postgres | `postgres:18-bookworm` (Compose service) |
-| Wagtail | `wagtail==8.0` |
+| Wagtail / psycopg | [`requirements.txt`](requirements.txt) (`wagtail==8.0`, `psycopg[binary]>=3.2`) baked into the image |
 | Image | `ghcr.io/xgic/wagtail-dev` (semver on `v*` tags; GitHub Release required) |
 
 ---

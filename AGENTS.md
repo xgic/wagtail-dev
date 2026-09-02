@@ -11,6 +11,7 @@ Public repository. Follow https://github.com/xgic/ai for multi-repo standards.
 ## Scope
 
 - Publish `ghcr.io/xgic/wagtail-dev` (multi-arch; official Python/Wagtail/Django bases)
+- Environment Python pins (`requirements.txt`: Wagtail, psycopg) baked into the image
 - Official `postgres` as a Compose service
 - Compose-first Dev Container (`dockerComposeFile` + `service`)
 - GitHub Release on every final `v*` image line
