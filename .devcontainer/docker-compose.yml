@@ -1,12 +1,14 @@
 # Producer Compose. App starters use https://github.com/xgic/wagtail.
-# This repo publishes ghcr.io/xgic/wagtail-dev FROM official Python/Wagtail
-# pins. Until the first GHCR tag exists, the primary service uses the
-# official python base as a stand-in.
+# Builds and tags ghcr.io/xgic/wagtail-dev:0.1.0 FROM official Python/Wagtail
+# pins. First GHCR push is the Publish GHCR workflow after a v* tag.
 name: xgic-wagtail-dev
 
 services:
   xgic-wagtail-dev:
-    image: python:3.14-bookworm
+    image: ghcr.io/xgic/wagtail-dev:0.1.0
+    build:
+      context: ..
+      dockerfile: Dockerfile
     container_name: xgic-wagtail-dev
     working_dir: /workspace
     command: ["sleep", "infinity"]

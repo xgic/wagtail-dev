@@ -1,0 +1,6 @@
+.git
+.github
+.venv
+**/.xgic
+**/.pytest_cache
+**/__pycache__
