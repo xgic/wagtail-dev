@@ -1,4 +1,4 @@
-# Contributor environment pins. Official images + pip; no custom GHCR image yet.
+# Pins baked into ghcr.io/xgic/wagtail-dev (FROM official python).
 # Wagtail 8.0 is current (Django 5.2 / 6.0 / 6.1). Python 3.14 (ADR-0002).
 wagtail==8.0
 psycopg[binary]>=3.2

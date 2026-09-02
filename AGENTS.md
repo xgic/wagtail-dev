@@ -4,19 +4,19 @@ Public repository. Follow https://github.com/xgic/ai for multi-repo standards.
 
 ## Product
 
-- **Role:** `*-dev` producer: official image pins + contributor Docker Compose
+- **Role:** `*-dev` GHCR producer for `ghcr.io/xgic/wagtail-dev` (FROM official Python/Wagtail/Django pins)
 - **Not** the end-user template → https://github.com/xgic/wagtail
 - **CMS decision:** [ADR-0006](https://github.com/xgic/ai/blob/main/docs/adr/0006-adopt-wagtail.md)
 
 ## Scope
 
-- Pin official `python` and `postgres` images
-- Document `wagtail==8.0` as the pip pin
+- Publish `ghcr.io/xgic/wagtail-dev` (multi-arch; official Python/Wagtail/Django bases)
+- Official `postgres` as a Compose service
 - Compose-first Dev Container
 
 ## Out of scope
 
-- Custom GHCR image until a measured need is recorded
+- Forking vendor Wagtail/Django images
 - Site schema / StreamField models
 - Private host defaults
 - Payload CMS producer work

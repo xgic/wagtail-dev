@@ -10,5 +10,5 @@
 
 - [ ] Public-safe only
 - [ ] App starters still pointed at https://github.com/xgic/wagtail
-- [ ] No custom GHCR image unless a measured need is recorded
+- [ ] Producer image path remains `ghcr.io/xgic/wagtail-dev` (official Python/Wagtail/Django bases; do not fork vendor images)
 - [ ] Human UI review before merge to `main`

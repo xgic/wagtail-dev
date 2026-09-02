@@ -2,8 +2,8 @@
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
-**Contributor environment and official image pins for Wagtail.** This is the
-`*-dev` producer repo ([ADR-0001](https://github.com/xgic/ai/blob/main/docs/adr/0001-xgic-gitlab-architecture-and-repository-naming.md)).
+**Wagtail Dev Container image producer.** This `*-dev` repository publishes
+`ghcr.io/xgic/wagtail-dev` ([ADR-0001](https://github.com/xgic/ai/blob/main/docs/adr/0001-xgic-gitlab-architecture-and-repository-naming.md)).
 It is **not** the app start.
 
 **App start:** [xgic/wagtail](https://github.com/xgic/wagtail) (GitHub Template).
@@ -22,9 +22,11 @@ Standards hub: [xgic/ai](https://github.com/xgic/ai) · Default CMS:
 | Wagtail | `wagtail==8.0` | Current feature release; pip into the Python image |
 | Django | from Wagtail 8.0 | 5.2 / 6.0 / 6.1 |
 
-There is **no** custom `ghcr.io/xgic/wagtail-dev` image yet. ADR-0006 prefers
-official Wagtail/Django images until a measured need for a custom producer.
-Do not retag or invent a GHCR pin in the thin template.
+The producer image is **`ghcr.io/xgic/wagtail-dev`**, built FROM official
+Python / Wagtail / Django pins. Official `postgres` remains a Compose
+service (not forked). The first GHCR tag is not published yet; the thin
+template will pin it when it exists. Do not invent a GHCR tag in the
+template before publish.
 
 ---
 

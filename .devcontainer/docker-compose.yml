@@ -1,7 +1,7 @@
-# Contributor Compose. Official images only.
-# Do not publish a custom ghcr.io/xgic/wagtail-dev image until there is a
-# measured need (https://github.com/xgic/ai/blob/main/docs/adr/0006-adopt-wagtail.md).
-# App starters should use https://github.com/xgic/wagtail instead of this repo.
+# Producer Compose. App starters use https://github.com/xgic/wagtail.
+# This repo publishes ghcr.io/xgic/wagtail-dev FROM official Python/Wagtail
+# pins. Until the first GHCR tag exists, the primary service uses the
+# official python base as a stand-in.
 name: xgic-wagtail-dev
 
 services:
