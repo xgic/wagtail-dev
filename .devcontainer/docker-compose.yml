@@ -1,0 +1,51 @@
+# Producer Compose. App starters use https://github.com/xgic/wagtail.
+# Builds and tags ghcr.io/xgic/wagtail-dev:0.1.0 FROM official Python/Wagtail
+# pins. First GHCR push is the Publish GHCR workflow after a v* tag.
+name: xgic-wagtail-dev
+
+services:
+  xgic-wagtail-dev:
+    image: ghcr.io/xgic/wagtail-dev:0.1.0
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    container_name: xgic-wagtail-dev
+    working_dir: /workspace
+    command: ["sleep", "infinity"]
+    environment:
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONUNBUFFERED: "1"
+    networks:
+      - app-network
+    ports:
+      - "8000:8000"
+    volumes:
+      - ..:/workspace:cached
+    depends_on:
+      postgres:
+        condition: service_healthy
+    stop_grace_period: 5s
+
+  postgres:
+    image: postgres:18-bookworm
+    container_name: xgic-wagtail-dev-postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-wagtail}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-wagtail}
+      POSTGRES_DB: ${POSTGRES_DB:-wagtail}
+    networks:
+      - app-network
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    stop_grace_period: 10s
+
+networks:
+  app-network:
+
+volumes:
+  postgres-data:
