@@ -7,6 +7,15 @@ and this project uses [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## [0.1.1] - 2026-09-03
+
+### Fixed
+
+- Rebuild the producer image so `xgic wagtail setup` includes
+  `django.contrib.postgres` in generated `INSTALLED_APPS`
+  (https://github.com/xgic/wagtail-cli/pull/13). Wagtail search on
+  PostgreSQL needs `SearchVectorField` / `GinIndex`.
+
 ## [0.1.0] - 2026-09-03
 
 ### Added
