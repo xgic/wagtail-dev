@@ -7,6 +7,12 @@ and this project uses [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### Changed
+
+- Dockerfile sets `PIP_ROOT_USER_ACTION=ignore` so the intentional
+  root `pip install` in the image build does not warn. Packages still
+  install as root before `USER vscode`. No virtualenv.
+
 ## [0.1.1] - 2026-09-03
 
 ### Fixed
