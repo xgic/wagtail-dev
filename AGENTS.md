@@ -15,6 +15,7 @@ Public repository. Follow https://github.com/xgic/ai for multi-repo standards.
 - Install XGIC CLI modules including `xgic-wagtail-cli` (`xgic wagtail setup` / `schema`)
 - Official `postgres` as a Compose service
 - Compose-first Dev Container (`dockerComposeFile` + `service`)
+- Image user `vscode` (UID 1000); `devcontainer.json` sets `remoteUser` to `vscode` so Linux UID remap can run. Not Wagtail's stock `USER wagtail` (project/gunicorn Dockerfile).
 - GitHub Release on every final `v*` image line
 
 ## Out of scope
