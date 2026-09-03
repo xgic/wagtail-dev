@@ -7,6 +7,8 @@ and this project uses [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## [0.1.0] - 2026-09-03
+
 ### Added
 
 - Dev Container producer bootstrap: Dockerfile FROM official Python 3.14,
