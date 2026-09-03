@@ -11,3 +11,5 @@ and this project uses [Semantic Versioning](https://semver.org/).
 
 - Dev Container producer bootstrap: Dockerfile FROM official Python 3.14,
   Compose, GHCR publish workflow, community health files.
+- Install `xgic-wagtail-cli` from git (until PyPI) so `xgic wagtail setup`
+  is available in the image.
