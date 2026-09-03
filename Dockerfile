@@ -15,6 +15,7 @@ LABEL org.opencontainers.image.title="wagtail-dev" \
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    PIP_ROOT_USER_ACTION=ignore \
     PATH="/home/vscode/.local/bin:${PATH}"
 
 RUN apt-get update \
