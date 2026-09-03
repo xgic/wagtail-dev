@@ -75,7 +75,7 @@ docker compose -f .devcontainer/docker-compose.yml build
 
 Reopen in the Dev Container. Site schema belongs in [xgic/wagtail](https://github.com/xgic/wagtail).
 
-CLI module: [xgic/wagtail-cli](https://github.com/xgic/wagtail-cli) (`xgic wagtail …`).
+CLI module: [xgic/wagtail-cli](https://github.com/xgic/wagtail-cli) (`xgic wagtail setup`, `xgic wagtail schema`). App start uses **PostgreSQL**; do not leave `wagtail start` on SQLite.
 
 ---
 
