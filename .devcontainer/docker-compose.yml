@@ -5,7 +5,7 @@ name: xgic-wagtail-dev
 
 services:
   xgic-wagtail-dev:
-    image: ghcr.io/xgic/wagtail-dev:0.1.1
+    image: ghcr.io/xgic/wagtail-dev:0.1.2
     build:
       context: ..
       dockerfile: Dockerfile
