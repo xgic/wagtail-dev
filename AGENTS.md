@@ -114,8 +114,7 @@ CLI behavior changes belong in
 ## Out of scope
 
 - Forking vendor Wagtail/Django images
-- Site schema / StreamField / content models (empty-site gate on
-  https://github.com/xgic/wagtail)
+- Site schema / StreamField / content models (https://github.com/xgic/wagtail stays an empty template)
 - Thin CLI framework → https://github.com/xgic/cli
 - Docker Compose lifecycle implementation → https://github.com/xgic/dev-cli
 - Payload CMS producer or `xgic payload` work (Payload is frozen)
