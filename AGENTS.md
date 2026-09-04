@@ -29,7 +29,7 @@ entrypoint.
 
 **Install source:** the image installs **from PyPI** with version pins
 (`xgic-cli>=0.2.1`, `xgic-wagtail-cli>=0.1.0`), not from live Git
-`main`. See
+`main`, using **uv** (`ghcr.io/astral-sh/uv:0.12.9`). See
 [python-package-release.md](https://github.com/xgic/ai/blob/main/docs/python-package-release.md).
 
 **Image user:** `vscode` (UID 1000). `devcontainer.json` sets
@@ -84,9 +84,10 @@ Inside the Dev Container (`xgic` is on PATH):
 Do **not** reintroduce `initializeCommand` / `postAttachCommand` /
 `postStartCommand` / `postCreateCommand` hooks for Git DX.
 
-**Git auth (VS Code best practice):** prefer **HTTPS + host credential
-helper**. Never copy host private keys into the image. Do not invent
-entrypoint Git DX scripts here unless they already ship in this image.
+**Git auth (VS Code best practice):** GitHub remotes are rewritten to
+HTTPS at image build (`git config --system url.https://github.com/.insteadOf git@github.com:`).
+The image installs `openssh-client` for other SSH remotes. Never copy
+host private keys into the image.
 
 `dbAdapter` is **postgres** only. Database name and user come from
 template `.devcontainer` config / `.env`—not hard-coded in the image.
