@@ -7,6 +7,8 @@ and this project uses [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## [0.1.2] - 2026-09-04
+
 ### Changed
 
 - Image Python installs use **uv** (`ghcr.io/astral-sh/uv:0.12.9`)
