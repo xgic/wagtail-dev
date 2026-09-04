@@ -13,7 +13,10 @@ and this project uses [Semantic Versioning](https://semver.org/).
   root `pip install` in the image build does not warn. Packages still
   install as root before `USER vscode`. No virtualenv.
 - Install `xgic-cli>=0.2.1` and `xgic-wagtail-cli>=0.1.0` from PyPI
-  (no git URL). Do not retag `v0.1.0` or `v0.1.1`.
+  (no git URL).
+- Expand `AGENTS.md` for Grok Build: product table, command map,
+  session startup, Docker Compose–first contract, public-safe write
+  gate, out-of-scope rules.
 
 ## [0.1.1] - 2026-09-03
 
