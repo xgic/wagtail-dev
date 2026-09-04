@@ -16,6 +16,7 @@ Public repository. Follow https://github.com/xgic/ai for multi-repo standards.
 - Official `postgres` as a Compose service
 - Compose-first Dev Container (`dockerComposeFile` + `service`)
 - Image user `vscode` (UID 1000); `devcontainer.json` sets `remoteUser` to `vscode` so Linux UID remap can run. Not Wagtail's stock `USER wagtail` (project/gunicorn Dockerfile).
+- GitHub git remotes use HTTPS (`url.insteadOf` + VS Code host credential helper). Image includes `openssh-client` for other SSH remotes. Do not copy host private keys.
 - GitHub Release on every final `v*` image line
 
 ## Out of scope

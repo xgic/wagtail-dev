@@ -9,9 +9,16 @@ and this project uses [Semantic Versioning](https://semver.org/).
 
 ### Changed
 
-- Dockerfile sets `PIP_ROOT_USER_ACTION=ignore` so the intentional
-  root `pip install` in the image build does not warn. Packages still
-  install as root before `USER vscode`. No virtualenv.
+- Image Python installs use **uv** (`ghcr.io/astral-sh/uv:0.12.9`)
+  instead of pip. `requirements.txt` remains the pin file.
+- Apt runtime libraries only (binary wheels for Pillow / psycopg);
+  drop `-dev` build packages.
+
+### Fixed
+
+- Dev Container GitHub `git pull` / `fetch` / `push`: install
+  `openssh-client` and rewrite `git@github.com:` to HTTPS so the
+  VS Code host credential helper is used. Do not copy host keys.
 
 ## [0.1.1] - 2026-09-03
 

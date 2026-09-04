@@ -1,11 +1,11 @@
 # Producer Compose. App starters use https://github.com/xgic/wagtail.
-# Builds and tags ghcr.io/xgic/wagtail-dev:0.1.0 FROM official Python/Wagtail
-# pins. First GHCR push is the Publish GHCR workflow after a v* tag.
+# Builds and tags ghcr.io/xgic/wagtail-dev FROM official Python/Wagtail
+# pins. GHCR push is the Publish GHCR workflow after a v* tag.
 name: xgic-wagtail-dev
 
 services:
   xgic-wagtail-dev:
-    image: ghcr.io/xgic/wagtail-dev:0.1.0
+    image: ghcr.io/xgic/wagtail-dev:0.1.1
     build:
       context: ..
       dockerfile: Dockerfile

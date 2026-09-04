@@ -16,7 +16,8 @@
       ],
       "settings": {
         "editor.formatOnSave": true,
-        "python.defaultInterpreterPath": "/usr/local/bin/python"
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "github.gitProtocol": "https"
       }
     }
   },

@@ -5,8 +5,10 @@
 [![GHCR](https://img.shields.io/badge/GHCR-wagtail--dev-blue?logo=github)](https://github.com/users/xgic/packages/container/package/wagtail-dev)
 [![Release](https://img.shields.io/github/v/release/xgic/wagtail-dev)](https://github.com/xgic/wagtail-dev/releases)
 [![CI](https://github.com/xgic/wagtail-dev/actions/workflows/ci.yml/badge.svg)](https://github.com/xgic/wagtail-dev/actions/workflows/ci.yml)
+[![Wagtail](https://img.shields.io/badge/Wagtail-8.0-2E1F5E?logo=wagtail&logoColor=white)](https://docs.wagtail.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org/docs/18/)
 
-**Dev Container image producer** for professional [Wagtail](https://wagtail.org) development.
+**Dev Container image producer** for professional [Wagtail](https://wagtail.org) development ([docs](https://docs.wagtail.org/)).
 
 This repository builds and publishes the multi-arch image:
 
@@ -75,7 +77,9 @@ docker compose -f .devcontainer/docker-compose.yml build
 
 Reopen in the Dev Container. Site schema belongs in [xgic/wagtail](https://github.com/xgic/wagtail).
 
-CLI module: [xgic/wagtail-cli](https://github.com/xgic/wagtail-cli) (`xgic wagtail setup`, `xgic wagtail schema`). App start uses **PostgreSQL**; do not leave `wagtail start` on SQLite.
+CLI module: [xgic/wagtail-cli](https://github.com/xgic/wagtail-cli) (`xgic wagtail setup`, `xgic wagtail schema`, `xgic wagtail dev`). App start uses **PostgreSQL**; do not leave `wagtail start` on SQLite.
+
+GitHub remotes in the Dev Container use **HTTPS** (VS Code host credential helper). The image includes `openssh-client` for other SSH hosts. Do not copy host private keys into the container.
 
 ---
 
