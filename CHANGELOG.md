@@ -13,6 +13,11 @@ and this project uses [Semantic Versioning](https://semver.org/).
   instead of pip. `requirements.txt` remains the pin file.
 - Apt runtime libraries only (binary wheels for Pillow / psycopg);
   drop `-dev` build packages.
+- Install `xgic-cli>=0.2.1` and `xgic-wagtail-cli>=0.1.0` from PyPI
+  (no git URL).
+- Expand `AGENTS.md` for Grok Build: product table, command map,
+  session startup, Docker Compose–first contract, public-safe write
+  gate, out-of-scope rules.
 
 ### Fixed
 

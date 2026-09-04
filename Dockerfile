@@ -42,9 +42,9 @@ WORKDIR /workspace
 COPY requirements.txt /tmp/requirements.txt
 RUN uv pip install --system --no-cache -r /tmp/requirements.txt \
     && uv pip install --system --no-cache \
-        "xgic-cli>=0.2.0" \
+        "xgic-cli>=0.2.1" \
         "xgic-dev-cli" \
-        "xgic-wagtail-cli @ git+https://github.com/xgic/wagtail-cli.git@main" \
+        "xgic-wagtail-cli>=0.1.0" \
     && rm /tmp/requirements.txt
 
 USER vscode

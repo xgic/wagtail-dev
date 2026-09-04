@@ -77,9 +77,13 @@ docker compose -f .devcontainer/docker-compose.yml build
 
 Reopen in the Dev Container. Site schema belongs in [xgic/wagtail](https://github.com/xgic/wagtail).
 
-CLI module: [xgic/wagtail-cli](https://github.com/xgic/wagtail-cli) (`xgic wagtail setup`, `xgic wagtail schema`, `xgic wagtail dev`). App start uses **PostgreSQL**; do not leave `wagtail start` on SQLite.
+CLI module: [xgic/wagtail-cli](https://github.com/xgic/wagtail-cli)
+(`xgic wagtail setup`, `xgic wagtail schema`, `xgic wagtail dev`).
+App start uses **PostgreSQL**; do not leave `wagtail start` on SQLite.
 
-GitHub remotes in the Dev Container use **HTTPS** (VS Code host credential helper). The image includes `openssh-client` for other SSH hosts. Do not copy host private keys into the container.
+GitHub remotes in the Dev Container use **HTTPS** (VS Code host
+credential helper). The image includes `openssh-client` for other SSH
+hosts. Do not copy host private keys into the container.
 
 ---
 
