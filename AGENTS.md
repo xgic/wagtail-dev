@@ -12,7 +12,7 @@ Public repository. Follow https://github.com/xgic/ai for multi-repo standards.
 
 - Publish `ghcr.io/xgic/wagtail-dev` (multi-arch; official Python/Wagtail/Django bases)
 - Environment Python pins (`requirements.txt`: Wagtail, psycopg) baked into the image
-- Install XGIC CLI modules including `xgic-wagtail-cli` (`xgic wagtail setup` / `schema`)
+- Install XGIC CLI modules from PyPI (`xgic-cli>=0.2.1`, `xgic-wagtail-cli>=0.1.0`; `xgic wagtail setup` / `schema` / `dev`)
 - Official `postgres` as a Compose service
 - Compose-first Dev Container (`dockerComposeFile` + `service`)
 - Image user `vscode` (UID 1000); `devcontainer.json` sets `remoteUser` to `vscode` so Linux UID remap can run. Not Wagtail's stock `USER wagtail` (project/gunicorn Dockerfile).

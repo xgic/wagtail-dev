@@ -36,9 +36,9 @@ COPY requirements.txt /tmp/requirements.txt
 RUN python -m pip install --upgrade pip \
     && python -m pip install --no-cache-dir -r /tmp/requirements.txt \
     && python -m pip install --no-cache-dir \
-        "xgic-cli>=0.2.0" \
+        "xgic-cli>=0.2.1" \
         "xgic-dev-cli" \
-        "xgic-wagtail-cli @ git+https://github.com/xgic/wagtail-cli.git@main" \
+        "xgic-wagtail-cli>=0.1.0" \
     && rm /tmp/requirements.txt
 
 USER vscode
