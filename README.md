@@ -68,6 +68,8 @@ Templates **must** reopen via **Docker Compose** attached to the pinned GHCR ima
 
 The image provides a **Docker CLI** that talks to the **host engine** through a mounted `/var/run/docker.sock` (Docker-outside-of-Docker). It does **not** run `dockerd`.
 
+Workspace settings for `xgic wagtail setup` live in `.devcontainer/create-wagtail-config.json` with JSON Schema IntelliSense (same pair as [xgic/wagtail](https://github.com/xgic/wagtail)). Do not add a second config format.
+
 ---
 
 ## Quick start (contributors)

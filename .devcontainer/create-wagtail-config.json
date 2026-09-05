@@ -1,0 +1,8 @@
+{
+  "$schema": "./create-wagtail-config.schema.json",
+  "projectName": "mysite",
+  "composeProjectName": "xgic-wagtail-dev",
+  "dbAdapter": "postgres",
+  "dbName": "wagtail",
+  "dbUser": "wagtail"
+}

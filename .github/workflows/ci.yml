@@ -27,6 +27,11 @@ jobs:
       - name: JSON devcontainer
         run: python -m json.tool .devcontainer/devcontainer.json > /dev/null
 
+      - name: JSON create-wagtail-config
+        run: |
+          python -m json.tool .devcontainer/create-wagtail-config.json > /dev/null
+          python -m json.tool .devcontainer/create-wagtail-config.schema.json > /dev/null
+
   unit:
     name: Unit tests
     runs-on: ubuntu-latest
