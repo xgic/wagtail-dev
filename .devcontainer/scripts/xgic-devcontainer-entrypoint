@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+# Image-owned Dev Container start (docker-sock GID align), then exec CMD.
+#
+# Installed at /usr/local/bin/xgic-devcontainer-entrypoint — not under
+# /workspace — so the consumer bind-mount cannot hide it.
+#
+# Compose should set user: "0:0" so groupmod can run, then this script
+# execs the keep-alive as APP_USER (vscode).
+#
+# Not a Docker-in-Docker entrypoint. The CLI talks to the host engine
+# via the mounted /var/run/docker.sock.
+#
+# Not a devcontainer.json lifecycle hook.
+# Intentionally no `set -e`: setup is non-fatal; keep-alive must always exec.
+set -uo pipefail
+
+ALIGN_PY="${XGIC_DOCKER_SOCK_ALIGN:-/usr/local/lib/xgic/docker-sock/align_docker_sock_gid.py}"
+APP_USER="${APP_USER:-vscode}"
+
+log() { echo "[devcontainer-entrypoint] $*" >&2; }
+
+is_root() { [ "$(id -u)" -eq 0 ]; }
+
+run_docker_sock_align() {
+  if [ ! -f "$ALIGN_PY" ]; then
+    return 0
+  fi
+  if is_root; then
+    python3 "$ALIGN_PY" || log "docker-sock align failed (non-fatal); continuing"
+  fi
+}
+
+run_docker_sock_align
+
+if [ "$#" -eq 0 ]; then
+  if is_root; then
+    exec runuser -u "$APP_USER" -- sleep infinity
+  fi
+  exec sleep infinity
+fi
+
+if is_root; then
+  exec runuser -u "$APP_USER" -- "$@"
+fi
+exec "$@"

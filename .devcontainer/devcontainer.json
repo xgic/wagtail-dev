@@ -12,7 +12,8 @@
         "ms-python.vscode-pylance",
         "mtxr.sqltools",
         "mtxr.sqltools-driver-pg",
-        "streetsidesoftware.code-spell-checker"
+        "streetsidesoftware.code-spell-checker",
+        "ms-azuretools.vscode-containers"
       ],
       "settings": {
         "editor.formatOnSave": true,
