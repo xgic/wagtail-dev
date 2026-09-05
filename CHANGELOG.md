@@ -19,6 +19,11 @@ and this project uses [Semantic Versioning](https://semver.org/).
   (same pair as the thin template). `composeProjectName` is
   `xgic-wagtail-dev`.
 
+### Changed
+
+- Producer image installs `xgic-dev-cli>=0.2.1` (Compose `name:` project
+  identity and missing-Docker-CLI diagnostics).
+
 ## [0.1.2] - 2026-09-04
 
 ### Changed
