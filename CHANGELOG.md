@@ -7,12 +7,17 @@ and this project uses [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## [0.1.3] - 2026-09-05
+
 ### Added
 
 - Docker-outside-of-Docker: install `docker-ce-cli`, Compose plugin, and
   Buildx plugin (no `dockerd`). Image-owned entrypoint aligns the
   `docker` group to the mounted engine socket GID. Compose exemplar
   mounts `/var/run/docker.sock` and sets `user: "0:0"`.
+- Canonical `.devcontainer/create-wagtail-config.json` + JSON Schema
+  (same pair as the thin template). `composeProjectName` is
+  `xgic-wagtail-dev`.
 
 ## [0.1.2] - 2026-09-04
 
