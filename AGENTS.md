@@ -48,8 +48,9 @@ to the pinned GHCR image service—**not** a standalone `image:` in
 |-------|----------|
 | Attach | `dockerComposeFile` + `service` (exemplar: this repo’s `.devcontainer/`) |
 | Image pin (apps) | `image: ghcr.io/xgic/wagtail-dev:<semver>` on the Docker Compose primary service |
-| Stable project | Docker Compose `name:` + `composeProjectName` kept aligned |
+| Stable project | Docker Compose `name:` + `XGIC_COMPOSE_PROJECT` + `composeProjectName` kept aligned |
 | Database | Official `postgres` service in the **same** Docker Compose project |
+| Docker-outside-of-Docker | Image installs **CLI + Compose plugin only** (no `dockerd`). Consumers mount `/var/run/docker.sock`. Entrypoint aligns the `docker` group GID. Compose `user: "0:0"` then `runuser` to `vscode`. |
 
 **Anti-pattern:** image-only reopen → Docker’s default `adjective_noun`
 container names, Postgres outside the IDE project, CLI /
@@ -59,8 +60,10 @@ Producer Compose defaults (this repo):
 
 - File: `.devcontainer/docker-compose.yml`
 - `name:` / primary service: `xgic-wagtail-dev`
+- `XGIC_COMPOSE_PROJECT` / `XGIC_PRIMARY_SERVICE`: `xgic-wagtail-dev`
 - Postgres: `postgres:18-bookworm`
 - Workspace: `/workspace` bind of the repo root
+- Engine socket: `/var/run/docker.sock` (DooD; not DinD)
 - Forwarded port: **8000** (Wagtail / Django)
 
 Do **not** copy `requirements.txt` into the template. Sites consume the

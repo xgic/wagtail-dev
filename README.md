@@ -66,6 +66,8 @@ Wagtail work needs a **reproducible environment**: pinned Python and Wagtail, Po
 
 Templates **must** reopen via **Docker Compose** attached to the pinned GHCR image service. Standalone `image:` reopen in `devcontainer.json` is **not supported**.
 
+The image provides a **Docker CLI** that talks to the **host engine** through a mounted `/var/run/docker.sock` (Docker-outside-of-Docker). It does **not** run `dockerd`.
+
 ---
 
 ## Quick start (contributors)

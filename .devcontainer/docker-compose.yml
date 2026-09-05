@@ -9,18 +9,25 @@ services:
     build:
       context: ..
       dockerfile: Dockerfile
+    # Root so the image entrypoint can align the docker-sock GID, then
+    # exec CMD as vscode. Do not enable Docker-in-Docker.
+    user: "0:0"
     container_name: xgic-wagtail-dev
     working_dir: /workspace
     command: ["sleep", "infinity"]
     environment:
       PYTHONDONTWRITEBYTECODE: "1"
       PYTHONUNBUFFERED: "1"
+      XGIC_COMPOSE_FILE: .devcontainer/docker-compose.yml
+      XGIC_COMPOSE_PROJECT: xgic-wagtail-dev
+      XGIC_PRIMARY_SERVICE: xgic-wagtail-dev
     networks:
       - app-network
     ports:
       - "8000:8000"
     volumes:
       - ..:/workspace:cached
+      - /var/run/docker.sock:/var/run/docker.sock
     depends_on:
       postgres:
         condition: service_healthy
