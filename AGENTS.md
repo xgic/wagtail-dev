@@ -48,7 +48,8 @@ to the pinned GHCR image service—**not** a standalone `image:` in
 |-------|----------|
 | Attach | `dockerComposeFile` + `service` (exemplar: this repo’s `.devcontainer/`) |
 | Image pin (apps) | `image: ghcr.io/xgic/wagtail-dev:<semver>` on the Docker Compose primary service |
-| Stable project | Docker Compose `name:` + `XGIC_COMPOSE_PROJECT` + `composeProjectName` kept aligned |
+| Stable project | Docker Compose `name:` + `XGIC_COMPOSE_PROJECT` + `composeProjectName` in `.devcontainer/create-wagtail-config.json` kept aligned |
+| Workspace config | `.devcontainer/create-wagtail-config.json` + `.devcontainer/create-wagtail-config.schema.json` (VS Code validates; `xgic wagtail schema` regenerates the schema). Do not add a second config format. |
 | Database | Official `postgres` service in the **same** Docker Compose project |
 | Docker-outside-of-Docker | Image installs **CLI + Compose plugin only** (no `dockerd`). Consumers mount `/var/run/docker.sock`. Entrypoint aligns the `docker` group GID. Compose `user: "0:0"` then `runuser` to `vscode`. |
 
@@ -61,6 +62,7 @@ Producer Compose defaults (this repo):
 - File: `.devcontainer/docker-compose.yml`
 - `name:` / primary service: `xgic-wagtail-dev`
 - `XGIC_COMPOSE_PROJECT` / `XGIC_PRIMARY_SERVICE`: `xgic-wagtail-dev`
+- `create-wagtail-config.json` `composeProjectName`: `xgic-wagtail-dev`
 - Postgres: `postgres:18-bookworm`
 - Workspace: `/workspace` bind of the repo root
 - Engine socket: `/var/run/docker.sock` (DooD; not DinD)

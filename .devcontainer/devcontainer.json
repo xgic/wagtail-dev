@@ -18,7 +18,13 @@
       "settings": {
         "editor.formatOnSave": true,
         "python.defaultInterpreterPath": "/usr/local/bin/python",
-        "github.gitProtocol": "https"
+        "github.gitProtocol": "https",
+        "json.schemas": [
+          {
+            "fileMatch": [".devcontainer/create-wagtail-config.json"],
+            "url": "./.devcontainer/create-wagtail-config.schema.json"
+          }
+        ]
       }
     }
   },
