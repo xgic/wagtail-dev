@@ -142,8 +142,12 @@ projects, or private tracker IDs). Optional helper from the hub clone:
   internal paths).
 - Human UI review before merge to `main`. No agent merge.
 - Dedicated issue-number branches; Conventional Commits.
-- **Labels required** on issues/PRs; default assignee **`@xgic`** for
-  active work unless explicitly unassigned.
+- **Labels (mandatory):** Every issue and pull request gets exactly one
+  type label in the create call: `bug`, `enhancement`, `documentation`,
+  `standards`, or `chore`. Welcome Discussion posts use `welcome` and
+  `documentation`. Do not put scoped GitLab labels on GitHub.
+  https://github.com/xgic/ai/blob/main/docs/community-health.md#labels-required
+  Default assignee **`@xgic`** unless explicitly unassigned.
 - Before close: complete Markdown checklists; confirm labels and
   assignee.
 - Python 3.14+; official `python:3.14.6-slim` FROM; Apache-2.0; root
