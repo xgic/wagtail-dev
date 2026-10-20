@@ -99,6 +99,7 @@ hosts. Do not copy host private keys into the container.
 | Postgres | `postgres:18-bookworm` (Compose service) |
 | Wagtail / psycopg | [`requirements.txt`](requirements.txt) (`wagtail==8.0`, `psycopg[binary]>=3.2`) baked into the image |
 | Image | `ghcr.io/xgic/wagtail-dev` (semver on `v*` tags; GitHub Release required) |
+| Release milestone | Titled `X.Y.Z`, matching the published version. Set it on every issue and pull request in that release. The candidate and the final publish share it. [Work tracking](https://github.com/xgic/ai/blob/main/docs/work-tracking-and-checklists.md). |
 
 ---
 
