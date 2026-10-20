@@ -38,6 +38,15 @@ entrypoint.
 **GitHub Release** is required on every final `v*` image line. Do not
 retag published lines.
 
+**Release milestone:** titled `X.Y.Z`, matching the published version.
+The Git tag stays `vX.Y.Z`. Set it on every issue and pull request
+included in the release. GitHub does not copy the issue milestone onto
+the pull request. The candidate and the final publish share it. When
+the shipped version changes, move both to that `X.Y.Z` before the
+milestone closes. Close the parent issue, then the milestone, after
+the final publish and its acceptance.
+https://github.com/xgic/ai/blob/main/docs/work-tracking-and-checklists.md
+
 ## Docker Compose–first consumer contract
 
 Supported consumer Dev Container reopen is **Docker Compose** attached
